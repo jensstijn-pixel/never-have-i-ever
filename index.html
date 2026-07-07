@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+  <title>Ik heb nog nooit…</title>
+  <meta name="description" content="Never Have I Ever — een vrolijk drankspel met veel thema's. Kies een thema, geef de telefoon door en drink als het waar is." />
+
+  <!-- PWA -->
+  <meta name="theme-color" content="#FFF3E4" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Ik heb nog nooit…" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="./icons/icon-180.png" />
+
+  <link rel="stylesheet" href="./fonts/fonts.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- ===================== THEMA-SELECTIE ===================== -->
+    <section id="view-themes" class="view is-active">
+      <div class="scroll">
+        <header class="home-header">
+          <div class="kicker home-kicker">HET SPEL</div>
+          <h1 class="home-title">Ik heb<br />nog nooit…</h1>
+          <p class="home-subtitle">Kies een thema, geef de telefoon door en drink als het waar is. 🍹</p>
+          <span class="dot dot-big" aria-hidden="true"></span>
+          <span class="dot dot-small" aria-hidden="true"></span>
+        </header>
+
+        <div class="filter" role="group" aria-label="Niveau">
+          <span class="filter-label">Niveau</span>
+          <div class="segmented" id="level-filter">
+            <button class="seg" data-level="1">Netjes</button>
+            <button class="seg" data-level="2">Pittig</button>
+            <button class="seg" data-level="3">Alles</button>
+          </div>
+          <span class="filter-hint" id="filter-hint"></span>
+        </div>
+
+        <div class="theme-grid" id="theme-grid"><!-- via app.js --></div>
+
+        <div class="home-bottom">
+          <button class="random-btn" id="random-btn">🎲 Verras me — alle thema's</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SPEL ===================== -->
+    <section id="view-game" class="view">
+      <div class="topbar">
+        <button class="icon-btn back-btn" id="back-btn" aria-label="Terug">‹</button>
+        <div class="topbar-title">
+          <span id="game-emoji" class="topbar-emoji"></span>
+          <span id="game-name"></span>
+        </div>
+        <div class="counter" id="counter"></div>
+      </div>
+
+      <div class="card-area">
+        <div class="card" id="card">
+          <div class="kicker card-kicker" id="card-kicker">Ik heb nog nooit</div>
+          <p class="card-question" id="card-question"></p>
+          <div class="card-hint">Was het waar? Neem een slok. 🍸</div>
+        </div>
+      </div>
+
+      <div class="bottom-controls">
+        <button class="icon-btn reshuffle-btn" id="reshuffle-btn" aria-label="Opnieuw schudden">↺</button>
+        <button class="next-btn" id="next-btn">Volgende →</button>
+      </div>
+    </section>
+
+    <!-- ===================== EIGEN VRAGEN ===================== -->
+    <section id="view-custom" class="view">
+      <div class="scroll">
+        <div class="topbar topbar-plain">
+          <button class="icon-btn back-btn dark" id="custom-back-btn" aria-label="Terug">‹</button>
+          <div class="topbar-title dark">✏️ Eigen vragen</div>
+          <div class="counter"></div>
+        </div>
+
+        <div class="custom-intro">
+          <p>Verzin je eigen "Ik heb nog nooit…". Ze blijven op deze telefoon bewaard en spelen mee in het eigen thema én in "Verras me".</p>
+        </div>
+
+        <form class="custom-form" id="custom-form">
+          <label class="custom-label" for="custom-input">Ik heb nog nooit…</label>
+          <textarea id="custom-input" class="custom-input" rows="2" maxlength="160" placeholder="…op een tafel gedanst."></textarea>
+          <div class="custom-level">
+            <span class="filter-label">Niveau</span>
+            <div class="segmented small" id="custom-level">
+              <button type="button" class="seg" data-level="1">Netjes</button>
+              <button type="button" class="seg" data-level="2">Pittig</button>
+              <button type="button" class="seg" data-level="3">Wild</button>
+            </div>
+          </div>
+          <button type="submit" class="add-btn">Toevoegen</button>
+        </form>
+
+        <div class="custom-list" id="custom-list"><!-- via app.js --></div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="./data/questions.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

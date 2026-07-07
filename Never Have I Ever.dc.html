@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { margin: 0; }
+  a { color: #FF3D77; text-decoration: none; }
+  a:hover { color: #d62c62; }
+  @keyframes popIn {
+    0% { transform: scale(.85) rotate(-2deg); opacity: 0; }
+    60% { transform: scale(1.03) rotate(.6deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0); opacity: 1; }
+  }
+  @keyframes floaty {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes press { 0% { transform: scale(1);} 50% { transform: scale(.94);} 100% { transform: scale(1);} }
+</style>
+</helmet>
+
+<div style="min-height:100vh;width:100%;display:flex;align-items:center;justify-content:center;background:radial-gradient(120% 120% at 50% 0%, #F3ECE0 0%, #E7DECF 100%);padding:32px;font-family:'Nunito',system-ui,sans-serif;">
+
+  <div style="position:relative;width:390px;height:844px;background:#0E0A14;border-radius:52px;padding:13px;box-shadow:0 40px 80px -24px rgba(30,18,40,.55), 0 0 0 2px rgba(255,255,255,.04) inset;">
+    <div style="position:relative;width:100%;height:100%;border-radius:40px;overflow:hidden;background:#FFF3E4;">
+
+      <!-- notch -->
+      <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:120px;height:30px;background:#0E0A14;border-radius:16px;z-index:40;"></div>
+
+      <!-- ===================== THEME SCREEN ===================== -->
+      <sc-if value="{{ isThemes }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;inset:0;overflow-y:auto;background:#FFF3E4;">
+        <!-- status bar -->
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:15px 28px 0;font-size:14px;font-weight:800;color:#2A1F32;">
+          <span>9:41</span>
+          <span style="display:flex;gap:5px;align-items:center;font-size:12px;letter-spacing:1px;">● ● ▮</span>
+        </div>
+
+        <!-- header -->
+        <div style="padding:38px 26px 20px;position:relative;">
+          <div style="position:absolute;top:34px;right:26px;width:44px;height:44px;border-radius:50%;background:#FFD84D;animation:floaty 4s ease-in-out infinite;"></div>
+          <div style="position:absolute;top:96px;right:70px;width:20px;height:20px;border-radius:50%;background:#FF3D77;animation:floaty 3.2s ease-in-out infinite;"></div>
+          <div style="font-size:13px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#C0492F;">Het spel</div>
+          <h1 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:46px;line-height:.96;margin:8px 0 0;color:#2A1F32;letter-spacing:-1px;">Ik heb<br>nog nooit…</h1>
+          <p style="margin:14px 0 0;font-size:16px;font-weight:700;color:#7A6B62;max-width:230px;">Kies een thema, geef de telefoon door en drink als het waar is. 🍹</p>
+        </div>
+
+        <!-- theme grid -->
+        <div style="padding:6px 20px 8px;display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <sc-for list="{{ themes }}" as="t" hint-placeholder-count="8">
+            <button onClick="{{ t.onClick }}" style="border:none;cursor:pointer;text-align:left;padding:16px 15px;border-radius:24px;background:{{ t.color }};color:#fff;box-shadow:0 10px 20px -8px rgba(42,31,50,.4);font-family:inherit;display:flex;flex-direction:column;gap:2px;min-height:104px;justify-content:flex-end;" style-active="animation:press .25s ease;">
+              <span style="font-size:32px;line-height:1;margin-bottom:6px;">{{ t.emoji }}</span>
+              <span style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:19px;">{{ t.name }}</span>
+              <span style="font-size:12px;font-weight:800;opacity:.82;">{{ t.count }} vragen</span>
+            </button>
+          </sc-for>
+        </div>
+
+        <!-- random -->
+        <div style="padding:12px 20px 32px;">
+          <button onClick="{{ startRandom }}" style="width:100%;border:none;cursor:pointer;padding:19px;border-radius:26px;background:#2A1F32;color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;font-size:19px;box-shadow:0 12px 24px -10px rgba(42,31,50,.6);display:flex;align-items:center;justify-content:center;gap:10px;" style-active="animation:press .25s ease;">
+            <span style="font-size:22px;">🎲</span> Verras me — alle thema's
+          </button>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ===================== GAME SCREEN ===================== -->
+      <sc-if value="{{ isGame }}">
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;background:{{ bg }};transition:background .45s ease;">
+        <!-- status bar -->
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:15px 28px 0;font-size:14px;font-weight:800;color:#fff;">
+          <span>9:41</span>
+          <span style="display:flex;gap:5px;align-items:center;font-size:12px;letter-spacing:1px;">● ● ▮</span>
+        </div>
+
+        <!-- top bar -->
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:22px 22px 6px;color:#fff;">
+          <button onClick="{{ back }}" style="border:none;cursor:pointer;background:rgba(255,255,255,.22);width:44px;height:44px;border-radius:50%;color:#fff;font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center;">‹</button>
+          <div style="display:flex;align-items:center;gap:8px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:18px;">
+            <span style="font-size:20px;">{{ themeEmoji }}</span>{{ themeName }}
+          </div>
+          <div style="min-width:56px;text-align:right;font-weight:800;font-size:15px;opacity:.9;">{{ counter }}</div>
+        </div>
+
+        <!-- card -->
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:14px 24px 8px;">
+          <div ref="{{ cardRef }}" onClick="{{ cardTap }}" style="width:100%;background:#fff;border-radius:34px;padding:40px 30px 44px;box-shadow:0 26px 46px -18px rgba(20,10,30,.5);cursor:pointer;animation:popIn .5s cubic-bezier(.34,1.56,.64,1) both;display:flex;flex-direction:column;">
+            <div style="font-size:13px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:{{ bg }};">Ik heb nog nooit</div>
+            <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:33px;line-height:1.12;color:#2A1F32;margin-top:16px;letter-spacing:-.5px;text-wrap:balance;">{{ question }}</div>
+            <div style="margin-top:26px;font-size:14px;font-weight:800;color:#C9BEB4;">Was het waar? Neem een slok. 🍸</div>
+          </div>
+        </div>
+
+        <!-- bottom controls -->
+        <div style="padding:6px 24px 40px;display:flex;gap:12px;">
+          <button onClick="{{ reshuffle }}" style="border:none;cursor:pointer;background:rgba(255,255,255,.22);width:64px;border-radius:26px;color:#fff;font-size:24px;display:flex;align-items:center;justify-content:center;" style-active="animation:press .25s ease;">↺</button>
+          <button onClick="{{ next }}" style="flex:1;border:none;cursor:pointer;padding:20px;border-radius:26px;background:#fff;color:{{ bg }};font-family:'Fredoka',sans-serif;font-weight:600;font-size:21px;box-shadow:0 14px 26px -12px rgba(20,10,30,.5);display:flex;align-items:center;justify-content:center;gap:8px;" style-active="animation:press .25s ease;">Volgende <span style="font-size:22px;">→</span></button>
+        </div>
+      </div>
+      </sc-if>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:470,&quot;height&quot;:900},&quot;shuffleQuestions&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Spel&quot;},&quot;tapToAdvance&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Spel&quot;},&quot;showCounter&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Spel&quot;}}">
+class Component extends DCLogic {
+  state = { view: 'themes', theme: 0, qIndex: 0, list: [] };
+  cardRef = React.createRef();
+
+  themes = [
+    { name: 'Party',     emoji: '🎉', color: '#FF3D77', questions: [
+      'tot zonsopgang doorgefeest.',
+      'iemand gekust op een feestje wiens naam ik niet meer weet.',
+      'op een tafel gedanst.',
+      'een feestje verlaten zonder gedag te zeggen.',
+      'nuchter karaoke gedaan alsof mijn leven ervan afhing.',
+      'een afterparty bij mij thuis georganiseerd die uit de hand liep.',
+      'me verstopt om niet naar een feestje te hoeven.' ] },
+    { name: 'Vrienden',  emoji: '👯', color: '#12B5A5', questions: [
+      'een geheim van een vriend doorverteld.',
+      'stiekem de crush van een vriend leuk gevonden.',
+      'een vriend geghost zonder uitleg.',
+      'geld geleend en het nooit terugbetaald.',
+      'gedaan alsof ik een sms niet had gezien.',
+      'over een vriend geroddeld waar die bij was.' ] },
+    { name: 'Relaties',  emoji: '💘', color: '#8A5CF6', questions: [
+      'twee mensen tegelijk gedatet.',
+      'de berichten van mijn partner stiekem gelezen.',
+      "iemand ge-appt na 2 uur 's nachts met bijbedoelingen.",
+      "'ik hou van je' gezegd zonder het te menen.",
+      'een date afgezegd met een verzonnen smoes.',
+      'mijn ex teruggebeld terwijl ik het beter wist.' ] },
+    { name: 'Pittig',    emoji: '🌶️', color: '#F1502F', questions: [
+      'iets ondeugends gedaan op een openbare plek.',
+      'een pikant bericht naar de verkeerde persoon gestuurd.',
+      'gefantaseerd over iemand in deze kamer.',
+      'iemand mee naar huis genomen op de eerste date.',
+      'gedatet met iemand die veel ouder was.',
+      'gedaan alsof, om ervan af te zijn.' ] },
+    { name: 'Reizen',    emoji: '✈️', color: '#2196C9', questions: [
+      'mijn vlucht gemist.',
+      'skinny gedipt in de zee.',
+      'in een vreemd land hopeloos verdwaald geraakt.',
+      'iets stiekems door de douane geloodst.',
+      'een vakantieromance gehad die thuis eindigde.',
+      'zwartgereden in het buitenland.' ] },
+    { name: 'Werk',      emoji: '💼', color: '#E08A00', questions: [
+      'gelogen om een vrije dag te krijgen.',
+      'geslapen tijdens een meeting.',
+      'iets op mijn cv verzonnen.',
+      'met een collega gezoend.',
+      'stiekem gedronken tijdens werktijd.',
+      'de baas vervloekt in een groepsapp… en per ongeluk in de verkeerde.' ] },
+    { name: 'Dronken',   emoji: '🍻', color: '#2FB350', questions: [
+      'een complete black-out gehad.',
+      'dronken iets belachelijks online besteld.',
+      'dronken mijn ex ge-appt.',
+      'gezworen nooit meer te drinken… de volgende dag.',
+      'een taxi niet kunnen betalen na het stappen.',
+      'op de verkeerde plek wakker geworden.' ] },
+    { name: 'Gênant',    emoji: '😳', color: '#D6399E', questions: [
+      'iemand bij de compleet verkeerde naam genoemd.',
+      'teruggezwaaid naar iemand die niet naar mij zwaaide.',
+      'een screenshot naar precies die persoon gestuurd.',
+      'hardop gepraat in mijn slaap waar anderen bij waren.',
+      'gestruikeld in het openbaar en gedaan alsof er niks gebeurde.',
+      'iets in mijn broek gelachen.' ] },
+  ];
+
+  shuffle(a) {
+    const r = a.slice();
+    for (let i = r.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [r[i], r[j]] = [r[j], r[i]];
+    }
+    return r;
+  }
+
+  buildList(i) {
+    const mk = (t) => t.questions.map(q => ({ text: q, color: t.color, emoji: t.emoji, name: t.name }));
+    let list = i === -1 ? [].concat(...this.themes.map(mk)) : mk(this.themes[i]);
+    if (this.props.shuffleQuestions ?? true) list = this.shuffle(list);
+    return list;
+  }
+
+  start(i) { this.setState({ view: 'game', theme: i, qIndex: 0, list: this.buildList(i) }); }
+  back() { this.setState({ view: 'themes' }); }
+  reshuffle() { this.setState(s => ({ qIndex: 0, list: this.shuffle(s.list) })); }
+  next() {
+    this.setState(s => {
+      let n = s.qIndex + 1, list = s.list;
+      if (n >= list.length) { n = 0; if (this.props.shuffleQuestions ?? true) list = this.shuffle(list); }
+      return { qIndex: n, list };
+    });
+  }
+
+  componentDidUpdate(pp, ps) {
+    if (ps.qIndex !== this.state.qIndex || ps.theme !== this.state.theme) {
+      const el = this.cardRef.current;
+      if (el) { el.style.animation = 'none'; void el.offsetWidth; el.style.animation = ''; }
+    }
+  }
+
+  renderVals() {
+    const themes = this.themes.map((t, i) => ({
+      name: t.name, emoji: t.emoji, color: t.color, count: t.questions.length,
+      onClick: () => this.start(i),
+    }));
+    const list = this.state.list || [];
+    const cur = list[this.state.qIndex] || {};
+    const total = list.length || 1;
+    const showCounter = this.props.showCounter ?? true;
+    return {
+      isThemes: this.state.view === 'themes',
+      isGame: this.state.view === 'game',
+      themes,
+      startRandom: () => this.start(-1),
+      themeName: this.state.theme === -1 ? 'Willekeurig' : (cur.name || ''),
+      themeEmoji: this.state.theme === -1 ? '🎲' : (cur.emoji || ''),
+      question: cur.text || '',
+      bg: cur.color || '#FF3D77',
+      counter: showCounter ? `${this.state.qIndex + 1} / ${total}` : '',
+      next: () => this.next(),
+      reshuffle: () => this.reshuffle(),
+      back: () => this.back(),
+      cardTap: (this.props.tapToAdvance ?? true) ? () => this.next() : undefined,
+      cardRef: this.cardRef,
+    };
+  }
+}
+</script>
+</body>
+</html>
