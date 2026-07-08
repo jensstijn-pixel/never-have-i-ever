@@ -59,7 +59,18 @@ const THEMES = [
       { text: "een hele nacht doorgehaald en direct naar mijn werk gegaan.", level: 2 },
       { text: "gedaan alsof ik naar de wc ging om ergens weg te glippen.", level: 1 },
       { text: "met wildvreemden een polonaise gelopen.", level: 1 },
-      { text: "spijt gehad van een feestje nog voor het begon.", level: 1 }
+      { text: "spijt gehad van een feestje nog voor het begon.", level: 1 },
+      // Extra 18+ vragen
+      { text: "geneukt op een feest terwijl het gewoon doorging.", level: 3 },
+      { text: "seks gehad op de wc van een club.", level: 3 },
+      { text: "iemand versierd en mee naar huis genomen van een feest.", level: 3 },
+      { text: "op een feest twee mensen gezoend zonder dat ze het van elkaar wisten.", level: 3 },
+      { text: "dronken met een wildvreemde gezoend op de dansvloer.", level: 2 },
+      { text: "een one-night-stand meegenomen van het feest.", level: 3 },
+      { text: "op een feest een naaktfoto of dickpic verstuurd.", level: 3 },
+      { text: "naakt gezwommen tijdens een feest.", level: 3 },
+      { text: "op een afterparty met iemand het bed in gedoken.", level: 3 },
+      { text: "iemand op de wc afgetrokken of gepijpt tijdens een feest.", level: 3 }
     ]
   },
   {
@@ -112,7 +123,18 @@ const THEMES = [
       { text: "gedaan alsof ik het cadeau geweldig vond.", level: 1 },
       { text: "een vriend in het diepe gegooid tijdens een presentatie.", level: 1 },
       { text: "stiekem opgelucht geweest toen een afspraak werd afgezegd.", level: 1 },
-      { text: "een vriend beloofd te bellen en dat maanden uitgesteld.", level: 1 }
+      { text: "een vriend beloofd te bellen en dat maanden uitgesteld.", level: 1 },
+      // Extra 18+ vragen
+      { text: "seks gehad met een vriend en gedaan alsof er niks gebeurd was.", level: 3 },
+      { text: "met de ex van een vriend geneukt.", level: 3 },
+      { text: "een vriend afgetrokken of gebeft.", level: 3 },
+      { text: "gezoend met een vriend puur uit verveling.", level: 2 },
+      { text: "een dronken nummertje met een goede vriend gehad.", level: 3 },
+      { text: "een vriend een naaktfoto gestuurd.", level: 3 },
+      { text: "geil geweest op de partner van een vriend.", level: 3 },
+      { text: "met twee mensen uit dezelfde vriendengroep geslapen.", level: 3 },
+      { text: "een vriendschap kapotgemaakt door seks.", level: 3 },
+      { text: "een vriend gebruikt als vaste booty call.", level: 3 }
     ]
   },
   {
@@ -123,7 +145,7 @@ const THEMES = [
     questions: [
       { text: "twee mensen tegelijk gedatet.", level: 3 },
       { text: "de berichten van mijn partner stiekem gelezen.", level: 2 },
-      { text: "iemand ge-appt na 2 uur 's nachts met bijbedoelingen.", level: 3 },
+      { text: "een booty call gestuurd na 2 uur 's nachts.", level: 3 },
       { text: "'ik hou van je' gezegd zonder het te menen.", level: 2 },
       { text: "een date afgezegd met een verzonnen smoes.", level: 1 },
       { text: "mijn ex teruggebeld terwijl ik het beter wist.", level: 2 },
@@ -165,7 +187,18 @@ const THEMES = [
       { text: "gedaan alsof mijn telefoon stuk was om een date te ontlopen.", level: 1 },
       { text: "iemand valse hoop gegeven.", level: 2 },
       { text: "verliefd geworden op iemand puur door hun stem.", level: 1 },
-      { text: "na een breuk direct hun beste vriend leuk gevonden.", level: 3 }
+      { text: "na een breuk direct hun beste vriend leuk gevonden.", level: 3 },
+      // Extra 18+ vragen
+      { text: "vreemdgegaan.", level: 3 },
+      { text: "seks gehad met een ex nadat het uit was.", level: 3 },
+      { text: "een orgasme gefaket bij mijn partner.", level: 3 },
+      { text: "met iemand geneukt puur uit wraak op mijn ex.", level: 3 },
+      { text: "seks gehad op de eerste date en daarna geghost.", level: 3 },
+      { text: "een naaktfoto of dickpic naar een date gestuurd.", level: 3 },
+      { text: "in dezelfde week met twee mensen naar bed geweest.", level: 3 },
+      { text: "seks gehad met iemand puur omdat ik me eenzaam voelde.", level: 3 },
+      { text: "mijn ex geappt voor een laatste keer seks.", level: 3 },
+      { text: "een sekstape of pikante foto's met een partner gemaakt.", level: 3 }
     ]
   },
   {
@@ -174,14 +207,14 @@ const THEMES = [
     emoji: "🌶️",
     color: "#F1502F",
     questions: [
-      { text: "iets ondeugends gedaan op een openbare plek.", level: 3 },
+      { text: "seks gehad op een openbare plek.", level: 3 },
       { text: "een pikant bericht naar de verkeerde persoon gestuurd.", level: 3 },
       { text: "gefantaseerd over iemand in deze kamer.", level: 3 },
       { text: "iemand mee naar huis genomen op de eerste date.", level: 3 },
       { text: "gedatet met iemand die veel ouder was.", level: 2 },
-      { text: "gedaan alsof, om ervan af te zijn.", level: 3 },
+      { text: "een orgasme gefaket om ervan af te zijn.", level: 3 },
       { text: "een pikante foto gestuurd.", level: 3 },
-      { text: "iets uitgeprobeerd waar ik de volgende dag om moest lachen.", level: 3 },
+      { text: "een standje geprobeerd waar ik de volgende dag om moest lachen.", level: 3 },
       { text: "een one-night-stand gehad wiens naam ik niet meer weet.", level: 3 },
       { text: "met iemand gezoend op een compleet ongepaste plek.", level: 3 },
       { text: "een date gehad die eindigde vóór het voorgerecht.", level: 2 },
@@ -201,7 +234,7 @@ const THEMES = [
       { text: "een romantisch bericht naar de groepsapp gestuurd in plaats van privé.", level: 3 },
       { text: "iemand met mijn ogen uitgekleed aan de andere kant van de zaal.", level: 3 },
       { text: "een gewaagd verhaal verteld dat eigenlijk over mezelf ging.", level: 2 },
-      { text: "iemand het hof gemaakt op een plek waar dat echt niet hoorde.", level: 3 },
+      { text: "geneukt op een plek waar dat echt niet hoorde.", level: 3 },
       { text: "een pikant dagboek of notitie bijgehouden.", level: 2 },
       { text: "gedaan alsof ik single was terwijl dat niet zo was.", level: 3 },
       { text: "iemand ge-appt met alleen een gewaagde emoji.", level: 3 },
@@ -216,7 +249,7 @@ const THEMES = [
       { text: "gedaan alsof ik naar de wc ging om iemand een berichtje te sturen.", level: 2 },
       { text: "een spannende droom gehad over iemand die ik ken.", level: 3 },
       { text: "een gewaagde bijnaam voor iemand in mijn telefoon gehad.", level: 2 },
-      { text: "iemand mee uit eten genomen met bijbedoelingen.", level: 3 },
+      { text: "iemand mee uit eten genomen puur om daarna te neuken.", level: 3 },
       { text: "een pikant momentje bijna laten betrappen.", level: 3 },
       { text: "iets gedaan puur om te kijken of ik het durfde.", level: 2 },
       // Extra pittige / seksuele vragen
@@ -256,7 +289,13 @@ const THEMES = [
       { text: "seks gehad en daarna gedaan alsof het niks voorstelde.", level: 3 },
       { text: "de hele nacht wakker gebleven door de seks.", level: 3 },
       { text: "iemand versierd terwijl mijn vrienden toekeken.", level: 2 },
-      { text: "een date beoordeeld op hoe goed er gezoend werd.", level: 2 }
+      { text: "een date beoordeeld op hoe goed er gezoend werd.", level: 2 },
+      { text: "iemand gepijpt of afgetrokken op een gewaagde plek.", level: 3 },
+      { text: "meer dan één keer klaargekomen in één nacht.", level: 3 },
+      { text: "geneukt met iemand wiens naam ik niet eens wist.", level: 3 },
+      { text: "een vreemde geneukt op vakantie.", level: 3 },
+      { text: "seks gehad voor de camera of webcam.", level: 3 },
+      { text: "iemand laten toekijken tijdens de seks.", level: 3 }
     ]
   },
   {
@@ -309,7 +348,16 @@ const THEMES = [
       { text: "op vakantie iemands hart gebroken (of het mijne).", level: 2 },
       { text: "me voorgedaan als local om toeristenprijzen te ontwijken.", level: 1 },
       { text: "een grens overgestoken zonder precies te weten hoe.", level: 2 },
-      { text: "zoveel foto's gemaakt dat ik de plek zelf amper zag.", level: 1 }
+      { text: "zoveel foto's gemaakt dat ik de plek zelf amper zag.", level: 1 },
+      // Extra 18+ vragen
+      { text: "seks gehad in een vliegtuig (mile-high club).", level: 3 },
+      { text: "geneukt op het strand.", level: 3 },
+      { text: "een vakantieliefde geneukt en nooit meer gezien.", level: 3 },
+      { text: "seks gehad in een hostel-slaapzaal met anderen erbij.", level: 3 },
+      { text: "een one-night-stand gehad met een local.", level: 3 },
+      { text: "naakt gezwommen op een nudistenstrand.", level: 2 },
+      { text: "op vakantie in een triootje of groepsseks beland.", level: 3 },
+      { text: "seks gehad in het zwembad van het hotel.", level: 3 }
     ]
   },
   {
@@ -362,7 +410,16 @@ const THEMES = [
       { text: "gesolliciteerd op een baan waar ik totaal niet geschikt voor was.", level: 1 },
       { text: "mijn scherm snel weggeklikt toen de baas langsliep.", level: 1 },
       { text: "een hele werkdag verspild en gedaan alsof het productief was.", level: 1 },
-      { text: "tijdens een teammeeting stiekem zitten gamen.", level: 1 }
+      { text: "tijdens een teammeeting stiekem zitten gamen.", level: 1 },
+      // Extra 18+ vragen
+      { text: "seks gehad met een collega.", level: 3 },
+      { text: "seks gehad op kantoor of in de personeelsruimte.", level: 3 },
+      { text: "gesext met een collega tijdens een meeting.", level: 3 },
+      { text: "iets gehad met mijn baas of leidinggevende.", level: 3 },
+      { text: "een collega een naaktfoto gestuurd.", level: 3 },
+      { text: "seks gehad op een zakenreis of bedrijfsuitje.", level: 3 },
+      { text: "geil geweest op een collega en er niks mee gedaan.", level: 2 },
+      { text: "mezelf bevredigd op de wc van het werk.", level: 3 }
     ]
   },
   {
@@ -415,7 +472,16 @@ const THEMES = [
       { text: "dronken beloofd te stoppen en het rondje daarna weer besteld.", level: 1 },
       { text: "dronken verdwaald in mijn eigen buurt.", level: 1 },
       { text: "na één glas al gedaan alsof ik straalbezopen was.", level: 1 },
-      { text: "dronken mijn diepste geheim aan de bartender toevertrouwd.", level: 2 }
+      { text: "dronken mijn diepste geheim aan de bartender toevertrouwd.", level: 2 },
+      // Extra 18+ vragen
+      { text: "dronken seks gehad en me er niks meer van herinnerd.", level: 3 },
+      { text: "dronken met iemand geneukt waar ik nuchter nooit voor zou gaan.", level: 3 },
+      { text: "dronken een ex geneukt.", level: 3 },
+      { text: "dronken een naaktfoto verstuurd.", level: 3 },
+      { text: "dronken meegegaan met een wildvreemde voor seks.", level: 3 },
+      { text: "dronken in een threesome beland.", level: 3 },
+      { text: "dronken voor het eerst met iemand van hetzelfde geslacht gezoend.", level: 2 },
+      { text: "zo dronken geweest dat de seks niet eens lukte.", level: 3 }
     ]
   },
   {
@@ -468,7 +534,14 @@ const THEMES = [
       { text: "tijdens een minuut stilte hardop moeten lachen.", level: 2 },
       { text: "een privébericht in de verkeerde groep gepost.", level: 2 },
       { text: "gedaan alsof ik niet degene was die net viel.", level: 1 },
-      { text: "met mijn gulp open een halve dag rondgelopen.", level: 2 }
+      { text: "met mijn gulp open een halve dag rondgelopen.", level: 2 },
+      // Extra 18+ vragen
+      { text: "betrapt tijdens de seks.", level: 3 },
+      { text: "per ongeluk een naaktfoto naar de verkeerde persoon gestuurd.", level: 3 },
+      { text: "iemands naam verkeerd gezegd tijdens de seks.", level: 3 },
+      { text: "een seksgeluid gemaakt dat ik nooit meer kan terugnemen.", level: 3 },
+      { text: "betrapt terwijl ik mezelf bevredigde.", level: 3 },
+      { text: "gemerkt dat de buren of huisgenoten me tijdens de seks hoorden.", level: 3 }
     ]
   },
   {
@@ -521,7 +594,15 @@ const THEMES = [
       { text: "een werkstuk op het laatste moment in elkaar geflanst.", level: 1 },
       { text: "verstoppertje zo serieus genomen dat ik uren bleef zitten.", level: 1 },
       { text: "mijn eerste bijbaantje binnen een week alweer verpest.", level: 1 },
-      { text: "gedaan alsof mijn huisdier mijn huiswerk had opgegeten.", level: 1 }
+      { text: "gedaan alsof mijn huisdier mijn huiswerk had opgegeten.", level: 1 },
+      // Extra ondeugende vragen
+      { text: "als tiener stiekem porno gekeken en bijna betrapt.", level: 2 },
+      { text: "tijdens flessendraaien voor het eerst gezoend.", level: 2 },
+      { text: "op schoolkamp stiekem bij iemand in bed gekropen.", level: 2 },
+      { text: "een pornoblaadje of website verstopt voor mijn ouders.", level: 2 },
+      { text: "verliefd geweest op de foute persoon op school.", level: 1 },
+      { text: "mijn eerste zoen overdreven aan iedereen verteld.", level: 1 },
+      { text: "op de middelbare gedaan alsof ik veel ervarener was dan ik was.", level: 2 }
     ]
   },
   {
@@ -574,7 +655,16 @@ const THEMES = [
       { text: "een verhaal verzonnen om interessanter te lijken op een feestje.", level: 2 },
       { text: "gedaan alsof ik iets al wist om niet dom te lijken.", level: 1 },
       { text: "meegedaan aan roddels over iemand die ik eigenlijk mag.", level: 2 },
-      { text: "een fout van een ander maandenlang boven het hoofd gehouden.", level: 2 }
+      { text: "een fout van een ander maandenlang boven het hoofd gehouden.", level: 2 },
+      // Extra 18+ vragen
+      { text: "vreemdgegaan en er nooit iets over gezegd.", level: 3 },
+      { text: "geneukt met iemand die ik niet eens leuk vond.", level: 3 },
+      { text: "een sekstoy of pikant speeltje in huis verstopt.", level: 2 },
+      { text: "seks gehad met de ex van een vriend.", level: 3 },
+      { text: "iemand geghost meteen na de seks.", level: 3 },
+      { text: "gelogen over met hoeveel mensen ik naar bed ben geweest.", level: 2 },
+      { text: "een mapje met naaktfoto's op mijn telefoon gehad.", level: 2 },
+      { text: "seks gehad puur om iemand jaloers te maken.", level: 3 }
     ]
   },
   {
