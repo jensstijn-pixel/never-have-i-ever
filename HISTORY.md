@@ -47,8 +47,17 @@ een servertje.)
 `{ text: "…", level: 1 }` bij het juiste thema. Geen build nodig; herladen is genoeg.
 Bump daarna `CACHE = "ihnn-vX"` in `service-worker.js` zodat telefoons de update pakken.
 
+**Online (gedaan):** repo + GitHub Pages staan live.
+- Repo: https://github.com/jensstijn-pixel/never-have-i-ever (public)
+- Live app: **https://jensstijn-pixel.github.io/never-have-i-ever/**
+- Gedeployd via `gh` (account `jensstijn-pixel`). Getest online: laadt goed, service worker
+  registreert op het subpad, manifest + fonts HTTP 200.
+- **Updaten na wijzigingen:** `git add -A && git commit && git push` — Pages bouwt vanzelf
+  opnieuw. Bump wel `CACHE` in `service-worker.js` zodat telefoons de nieuwe versie pakken.
+
 ### Next steps / openstaand
-- **Nog niet gedaan: naar GitHub pushen + Pages aanzetten.** Geen git-repo/remote nog. Zie
-  README "Naar GitHub / installeren". Vereist Jens' GitHub-account (of `gh` CLI ingelogd).
-- Echte install op iPhone/Android door Jens nog te testen (kan ik niet zelf).
+- Echte install op iPhone/Android door Jens nog te testen (kan ik niet zelf) — link openen en
+  "Zet op beginscherm".
 - Mogelijk later: deel-knop/QR in de app, meer vragen, geluid/animatie-extra's.
+- Git-identiteit staat **lokaal** in deze repo (Jens / jens.stijn@gmail.com); globaal is niks
+  ingesteld.
