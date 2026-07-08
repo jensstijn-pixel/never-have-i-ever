@@ -1,6 +1,6 @@
 /* Service worker — maakt de app offline speelbaar.
    Bump CACHE bij elke update zodat oude bestanden vervangen worden. */
-var CACHE = "ihnn-v1";
+var CACHE = "ihnn-v2";
 
 var ASSETS = [
   "./",
