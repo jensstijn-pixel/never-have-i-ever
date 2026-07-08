@@ -2,6 +2,18 @@
 
 Nieuwste bovenaan. Projectgeheugen: keuzes, wat gedaan is, next steps, hoe het draait.
 
+## 2026-07-08 — Meer & pittiger content (18+)
+
+Op verzoek van Jens de content flink uitgebreid en directer gemaakt:
+- **Pittig**: 37 seksuele vragen toegevoegd (45 → later 88).
+- **Alle thema's**: ~85 directe 18+ vragen erbij; eufemismen vervangen door directe/grove taal
+  ("het hof gemaakt" → "geneukt", enz.). Jens wil expliciete taal — dat is oké voor dit 18+ spel.
+- **Vroeger** bewust ondeugend maar **niet** expliciet (thema gaat over de jeugd) — geen
+  seks-met-minderjarigen content.
+- **Totaal nu 568 vragen** (144 op niveau *wild*). Geen dubbele teksten (gecheckt in Node).
+- Seksuele/grove vragen staan op niveau **3 (wild)** → alleen zichtbaar bij filter **Alles**.
+- Cache gebumpt (v1 → v3). Alles gecommit + gepusht; live-versie geverifieerd.
+
 ## 2026-07-07 — Eerste bouw: werkende PWA
 
 **Wat het is:** een "Ik heb nog nooit…" drankspel als **PWA** (web-app die je op je
